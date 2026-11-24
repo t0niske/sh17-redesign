@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Сведения об образовательной организации — СШ №17 Томск</title>
+  <meta name="description" content="Основные сведения о МАУ ДО «Спортивная школа №17 города Томска»: учредитель, адрес, режим работы, документы, руководство, педагогический состав.">
+  <link rel="icon" href="https://sh17.ru/images/logoSH.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;600&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="school">
+<main id="main">
+  <section class="page-hero on-ink">
+    <div class="ghost-year">1993</div>
+    <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span>О школе</span></nav>
+      <h1 class="display h1">Сведения об образовательной организации</h1>
+      <p class="lead">Официальная информация о МАУ ДО СШ №17 в соответствии с требованиями к сайтам образовательных организаций</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:48px">
+    <div class="container info-layout">
+      <nav class="side-nav" id="side" aria-label="Разделы"></nav>
+      <div id="content" style="display:grid;gap:24px"></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+window.page = () => {
+  const all = [...SCHOOLINFO, null, ...LEGAL];
+  $('#side').innerHTML = all.map(x => x ? `<a href="#${x[1]}" data-s="${x[1]}">${x[0]}</a>` : '<div class="sep"></div>').join('');
+  const MAIN = `
+    <h2 class="display h2">Основные сведения</h2>
+    <dl class="dl">
+      <dt>Полное наименование</dt><dd>Муниципальное автономное учреждение дополнительного образования «Спортивная школа №17 Города Томска»</dd>
+      <dt>Сокращённое наименование</dt><dd>МАУ ДО СШ №17</dd>
+      <dt>Дата создания</dt><dd>1993 год</dd>
+      <dt>Тип организации</dt><dd>Организация дополнительного образования</dd>
+      <dt>Виды деятельности</dt><dd>Образовательная деятельность по дополнительным общеразвивающим программам в области физической культуры и спорта; по дополнительным образовательным программам спортивной подготовки; организация отдыха обучающихся в каникулярное время</dd>
+      <dt>Учредитель</dt><dd>Муниципальное образование «Город Томск». Функции учредителя осуществляет администрация Города Томска в лице управления физической культуры и спорта и департамента управления муниципальной собственностью</dd>
+      <dt>Место нахождения</dt><dd>634024, Томская область, г. Томск, ул. 5-й Армии, 15, стр. 1</dd>
+      <dt>Режим работы</dt><dd>Ежедневно с 09:00 до 21:00</dd>
+      <dt>Телефон</dt><dd><a class="num" href="tel:+73822462296">(3822) 46-22-96</a></dd>
+      <dt>Электронная почта</dt><dd><a href="mailto:st-vosxod@mail.ru">st-vosxod@mail.ru</a></dd>
+      <dt>Филиалы</dt><dd>Не имеет</dd>
+      <dt>Официальный сайт</dt><dd>sh17.ru</dd>
+    </dl>`;
+  const show = () => {
+    const s = (location.hash || '#main-info').slice(1);
+    const item = all.find(x => x && x[1] === s) || SCHOOLINFO[0];
+    $$('#side a').forEach(a => a.dataset.s === item[1] ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+    $('#content').innerHTML = item[1] === 'main-info' ? MAIN : `
+      <h2 class="display h2">${item[0]}</h2>
+      <div class="panel"><p style="margin:0;color:var(--text-2)">Содержимое раздела и прикреплённые документы переносятся из текущей версии сайта без изменений. Документы показываются списком с типом файла и датой размещения:</p>
+      <div class="files">
+        <a class="file" href="#"><span class="ext">PDF</span><div><span>Документ раздела «${item[0]}»</span><small>Размещено 01.09.2026</small></div>${ico('download', 'i-16')}</a>
+        <a class="file" href="#"><span class="ext">PDF</span><div><span>Приложение к документу</span><small>Размещено 01.09.2026</small></div>${ico('download', 'i-16')}</a>
+      </div></div>`;
+    if (location.hash) window.scrollTo({ top: $('.info-layout').offsetTop - 100 });
+  };
+  window.addEventListener('hashchange', show); show();
+};
+</script>
+</body>
+</html>

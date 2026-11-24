@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Матчи и результаты СШ №17 Томск</title>
+  <meta name="description" content="Результаты матчей команд СШ №17: ЮФЛ Сибирь, Первенство России U-14, первенство СФО и ДФО, турниры. Фильтр по годам рождения.">
+  <link rel="icon" href="https://sh17.ru/images/logoSH.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;600&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="matches">
+<main id="main">
+  <section class="page-hero on-ink" style="padding-bottom:0">
+    <div class="ghost-year">2026</div>
+    <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span>Матчи</span></nav>
+      <h1 class="display h1">Матчи</h1>
+      <p class="lead">Результаты всех команд школы и календарь соревнований сезона 2026</p>
+      <div class="rail" id="lastRail" style="margin-top:24px;padding-bottom:64px"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+      <div class="tabs" role="tablist" id="tabs">
+        <button role="tab" aria-selected="true" aria-controls="p-res" id="t-res">Результаты</button>
+        <button role="tab" aria-selected="false" aria-controls="p-tour" id="t-tour">Соревнования</button>
+      </div>
+      <div role="tabpanel" id="p-res" aria-labelledby="t-res">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px">
+          <div class="chips" id="chips">
+            <button class="chip" data-v="all" aria-pressed="true">Все команды</button>
+            <button class="chip" data-v="2013" aria-pressed="false">2013</button>
+            <button class="chip" data-v="2011" aria-pressed="false">2011 · ЮФЛ U-15</button>
+            <button class="chip" data-v="2010" aria-pressed="false">2010 · ЮФЛ U-16</button>
+          </div>
+          <span class="muted" id="totals" style="font-size:14px"></span>
+        </div>
+        <div id="list"></div>
+      </div>
+      <div role="tabpanel" id="p-tour" aria-labelledby="t-tour" hidden>
+        <table class="ttable" style="border:1px solid var(--line)" id="tournaments">
+          <thead><tr><th>Команда</th><th>Соревнование</th><th>Даты</th><th>Итог</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+window.page = () => {
+  const sorted = [...MATCHES].sort((a, b) => b.date.localeCompare(a.date) || b.id - a.id);
+  $('#lastRail').innerHTML = sorted.slice(0, 6).map(matchCard).join('');
+
+  const draw = v => {
+    const list = sorted.filter(m => v === 'all' || m.team === v);
+    const w = list.filter(m => resOf(m) === 'w').length, d = list.filter(m => resOf(m) === 'd').length, l = list.length - w - d;
+    $('#totals').textContent = `${list.length} матчей · ${w} В · ${d} Н · ${l} П`;
+    let html = '', month = '';
+    list.forEach(m => {
+      const dd = dt(m.date), key = `${MONTHS_N[dd.getMonth()]} ${dd.getFullYear()}`;
+      if (key !== month) { if (month) html += '</div>'; html += `<h2 class="month-label">${key}</h2><div class="mtable">`; month = key; }
+      html += matchRow(m);
+    });
+    $('#list').innerHTML = html + (month ? '</div>' : '');
+  };
+  const q = new URLSearchParams(location.search).get('team');
+  initChips($('#chips'), draw);
+  if (q) { $$('#chips .chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.v === q)); draw(q); } else draw('all');
+
+  $('#tournaments tbody').innerHTML = TOURNAMENTS.map(t => `<tr>
+    <td class="yr">${t.team}</td>
+    <td>${t.name}${t.place ? `<div class="muted" style="font-size:13px;margin-top:2px">${t.place}</div>` : ''}</td>
+    <td class="num muted" style="white-space:nowrap">${t.from} — ${t.to}</td>
+    <td>${t.result ? `<span class="medal ${t.result.startsWith('1') ? 'gold' : 'silver'}">${t.result}</span>` : '<span class="muted">—</span>'}</td></tr>`).join('');
+  initTabs($('#tabs').parentElement);
+  if (location.hash === '#tournaments') $('#t-tour').click();
+};
+</script>
+</body>
+</html>

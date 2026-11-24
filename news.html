@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Новости СШ №17 Томск</title>
+  <meta name="description" content="Новости спортивной школы №17: турниры, результаты команд, набор, награждения.">
+  <link rel="icon" href="https://sh17.ru/images/logoSH.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;600&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="news">
+<main id="main">
+  <section class="section" style="padding-top:48px">
+    <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки" style="color:var(--text-3);margin-bottom:20px"><a href="index.html">Главная</a><span>Новости</span></nav>
+      <div class="section-head" style="margin-bottom:24px">
+        <h1 class="display h1">Новости</h1>
+        <a class="btn btn-line" href="https://vk.com/ssh17tomsk" target="_blank" rel="noopener">Фото и видео во ВКонтакте</a>
+      </div>
+      <div class="chips scroll" id="chips" style="margin-bottom:40px">
+        <button class="chip" data-v="all" aria-pressed="true">Все</button>
+        <button class="chip" data-v="Турниры" aria-pressed="false">Турниры</button>
+        <button class="chip" data-v="Первенство России" aria-pressed="false">Первенство России</button>
+        <button class="chip" data-v="ЮФЛ Сибирь" aria-pressed="false">ЮФЛ Сибирь</button>
+        <button class="chip" data-v="Женский футбол" aria-pressed="false">Женский футбол</button>
+        <button class="chip" data-v="Набор" aria-pressed="false">Набор</button>
+      </div>
+      <div class="news-list" id="list"></div>
+      <div style="display:flex;justify-content:center;margin-top:56px"><button class="btn btn-line" type="button">Показать ещё</button></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+window.page = () => {
+  const draw = v => {
+    const list = NEWS.filter(n => v === 'all' || n.tag === v || (v === 'Первенство России' && n.tag.startsWith('Первенство')));
+    $('#list').innerHTML = list.map(newsCard).join('');
+  };
+  draw('all'); initChips($('#chips'), draw);
+};
+</script>
+</body>
+</html>

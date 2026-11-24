@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>СШ №17 2013 г.р. — состав, матчи, статистика</title>
+  <meta name="description" content="Команда СШ №17 2013 года рождения: чемпионы первенства СФО и ДФО 2026, участники финала Первенства России U-14. Состав, статистика игроков, результаты.">
+  <link rel="icon" href="https://sh17.ru/images/logoSH.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;600&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="teams">
+<main id="main">
+  <section class="team-hero">
+    <img class="keep" src="https://sh17.ru/images/TeamsPhoto/2013%20%D0%A8%D0%BA%D0%BB%D1%8F%D1%80%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B5.jpg" alt="Команда СШ №17 2013 года рождения">
+    <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><a href="teams.html" style="margin-left:0"><span>Команды</span></a><span>2013</span></nav>
+      <div class="team-title">
+        <h1 class="big num">2013</h1>
+        <div class="who">
+          <span class="tag" style="justify-self:start">Чемпионы СФО и ДФО 2026</span>
+          <b>Шкляр Евгений Андреевич</b>
+          <small>Тренеры-преподаватели · помощник — Салахутдинов Руслан Рамильевич</small>
+        </div>
+      </div>
+      <div class="stat-strip">
+        <div><b class="num">43</b><small>матча</small></div>
+        <div><b class="num">31</b><small>победа</small></div>
+        <div><b class="num">4</b><small>ничьи</small></div>
+        <div><b class="num">8</b><small>поражений</small></div>
+        <div><b class="num">160</b><small>забито</small></div>
+        <div><b class="num">38</b><small>пропущено</small></div>
+        <div class="form-cell"><small style="margin-bottom:8px">Последние матчи</small><span id="form"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+      <div class="tabs" role="tablist" id="tabs">
+        <button role="tab" aria-selected="true" aria-controls="p-squad" id="t-squad">Состав</button>
+        <button role="tab" aria-selected="false" aria-controls="p-matches" id="t-matches">Матчи</button>
+        <button role="tab" aria-selected="false" aria-controls="p-ach" id="t-ach">Достижения</button>
+      </div>
+
+      <div role="tabpanel" id="p-squad" aria-labelledby="t-squad">
+        <div class="leaders" id="leaders"></div>
+        <div id="squad"></div>
+      </div>
+
+      <div role="tabpanel" id="p-matches" aria-labelledby="t-matches" hidden>
+        <div class="mtable" id="matchList"></div>
+      </div>
+
+      <div role="tabpanel" id="p-ach" aria-labelledby="t-ach" hidden>
+        <table class="ttable" style="border:1px solid var(--line)">
+          <thead><tr><th>Год</th><th>Соревнование</th><th>Уровень</th><th>Итог</th></tr></thead>
+          <tbody>
+            <tr><td class="yr">2026</td><td>Первенство России среди команд спортивных школ U-14. Финальный этап, Сочи</td><td>Всероссийский</td><td><span class="medal">Участник финала</span></td></tr>
+            <tr><td class="yr">2026</td><td>Первенство Сибирского и Дальневосточного федеральных округов. Финальный этап, Красноярск</td><td>Межрегиональный</td><td><span class="medal gold">1 место</span></td></tr>
+            <tr><td class="yr">2026</td><td>Зона «Сибирская. Дальневосточная». Групповой этап</td><td>Межрегиональный</td><td><span class="medal">Выход в финальный этап</span></td></tr>
+            <tr><td class="yr">2026</td><td>Турнир памяти В.А. Пузанова</td><td>Региональный</td><td><span class="medal">5 побед в 5 матчах</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ink on-ink" style="padding:64px 0">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+      <div style="display:grid;gap:12px"><span class="kicker">Хотите играть в этой команде</span><h2 class="display h3">Просмотр для ребят 2013–2014 г.р.</h2><p class="lead">Вечерняя группа: вторник и пятница, 19:30. Тренер — Шкляр Евгений Андреевич</p></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="join.html#apply">Записаться на просмотр</a><a class="btn btn-line-ink" href="tel:+79528994374">8 952 899-43-74</a></div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+window.page = () => {
+  const ms = MATCHES.filter(m => m.team === '2013').sort((a, b) => b.date.localeCompare(a.date));
+  $('#form').innerHTML = formStrip(ms.slice(0, 6).reverse());
+
+  const goals = 160;
+  const by = (i) => [...SQUAD_2013].sort((a, b) => b[i] - a[i])[0];
+  const g = by(3), a = by(4), m = by(2);
+  const leader = (label, p, v, of, ofLabel) => `<div class="leader"><small>${label}</small>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px"><div style="display:grid;gap:4px"><b>${p[0]}</b><small>${{ВРТ:'Вратарь',ЗАЩ:'Защитник',ПЗЩ:'Полузащитник',НАП:'Нападающий'}[p[1]]}</small></div><span class="v num">${v}</span></div>
+    <div class="bar"><i style="width:${Math.round(v / of * 100)}%"></i></div><small>${ofLabel}</small></div>`;
+  $('#leaders').innerHTML =
+    leader('Лучший бомбардир', g, g[3], goals, `${Math.round(g[3] / goals * 100)}% голов команды`) +
+    leader('Лучший ассистент', a, a[4], SQUAD_2013.reduce((s, p) => s + p[4], 0), `из ${SQUAD_2013.reduce((s, p) => s + p[4], 0)} голевых передач команды`) +
+    leader('Больше всех матчей', m, m[2], 43, 'из 43 матчей команды');
+
+  const groups = [['ВРТ', 'Вратари'], ['ЗАЩ', 'Защитники'], ['ПЗЩ', 'Полузащитники'], ['НАП', 'Нападающие']];
+  $('#squad').innerHTML = groups.map(([k, name]) => {
+    const ps = SQUAD_2013.filter(p => p[1] === k).sort((x, y) => y[2] - x[2]);
+    return `<div class="pos-group"><h3 class="display h3">${name} <small>${ps.length}</small></h3><div class="squad">${ps.map(p => `
+      <div class="pcard${p[3] >= 10 ? ' top' : ''}"><span class="ini">${initials(p[0])}</span><div><b>${p[0]}</b>
+      <div class="st"><span><b>${p[2]}</b> ${plural(p[2], ['матч', 'матча', 'матчей'])}</span><span><b>${p[3]}</b> ${plural(p[3], ['гол', 'гола', 'голов'])}</span><span><b>${p[4]}</b> пас</span></div></div></div>`).join('')}</div></div>`;
+  }).join('');
+
+  $('#matchList').innerHTML = ms.map(matchRow).join('');
+  initTabs($('#tabs').parentElement);
+};
+</script>
+</body>
+</html>

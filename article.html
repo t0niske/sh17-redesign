@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Новость — СШ №17 Томск</title>
+  <meta name="description" content="Новости спортивной школы №17 города Томска">
+  <link rel="icon" href="https://sh17.ru/images/logoSH.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;600&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="news">
+<main id="main">
+  <article class="section" style="padding-top:48px">
+    <div class="container">
+      <nav class="crumbs" aria-label="Хлебные крошки" style="color:var(--text-3);margin-bottom:24px"><a href="index.html">Главная</a><a href="news.html"><span>Новости</span></a><span id="crumb"></span></nav>
+      <header style="display:grid;gap:20px;max-width:960px;margin-bottom:40px">
+        <div class="ncard"><div class="meta" id="meta"></div></div>
+        <h1 class="display h1" id="title"></h1>
+        <p class="lead" id="lead" style="font-size:20px;max-width:48rem"></p>
+      </header>
+      <div class="article">
+        <div>
+          <div class="article-cover" id="cover"></div>
+          <div class="article-body" id="body"></div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)">
+            <a class="btn btn-line btn-sm" href="https://vk.com/ssh17tomsk" target="_blank" rel="noopener">Фотоальбом во ВКонтакте</a>
+            <button class="btn btn-line btn-sm" type="button" onclick="navigator.share ? navigator.share({title: document.title, url: location.href}) : navigator.clipboard.writeText(location.href)">Поделиться</button>
+          </div>
+        </div>
+        <aside class="aside-sticky" id="aside"></aside>
+      </div>
+    </div>
+  </article>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2 class="display h2">Читайте также</h2><a class="link-arrow" href="news.html">Все новости</a></div>
+      <div class="news-list" id="more"></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+const BODY = {
+  220: n => `
+    <p>Команда 2013 года рождения прибыла в Сочи, где представит Томск в финальном этапе Первенства России среди мальчиков до 14 лет. По итогам жеребьёвки СШ №17 выступает в группе «С».</p>
+    <h2>Матчи группового этапа</h2>
+    <ul class="fixtures">${MATCHES.filter(m => m.team === '2013' && m.date >= '2026-11-16').sort((a, b) => a.date.localeCompare(b.date)).map(m => {
+      const [a, b] = m.home ? [m.us, m.them] : [m.them, m.us];
+      return `<li><small>${fmtDate(m.date)}</small><span>${m.home ? `СШ №17 — ${m.opp}` : `${m.opp} — СШ №17`}</span><span class="sc">${a}:${b}</span></li>`;
+    }).join('')}</ul>
+    <p>Впереди серьёзные соперники и важные матчи. Желаем нашим футболистам удачи и уверенной игры. Ссылки на трансляции публикуем в сообществе ВКонтакте.</p>`,
+  221: () => `
+    <p>В Новосибирске завершился турнир «Сибирь Cup» среди команд 2015 года рождения. Школу представила команда под руководством Алексея Борисовича Егорова и Максима Николаевича Родионова.</p>
+    <p>По итогам трёх игровых дней СШ №17 заняла 5-е место среди восьми участников. Отдельно отметим индивидуальное достижение: Григорий Станкевич признан лучшим игроком нашей команды.</p>
+    <p>Поздравляем ребят и тренеров. Такие турниры — это игровой опыт, новые эмоции и важные шаги в футбольном развитии.</p>`,
+  218: () => `
+    <p>Команда 2015 года рождения стала победителем турнира Владимира Рыкова в Новосибирске.</p>
+    <h2>Путь к титулу</h2>
+    <ul class="fixtures">
+      <li><small>Группа</small><span>СШ №17 — «Импульс» (Кемерово)</span><span class="sc">2:2</span></li>
+      <li><small>Группа</small><span>СШ №17 — СШ Новосибирск</span><span class="sc">6:0</span></li>
+      <li><small>Группа</small><span>СШ №17 — «Енисей» (Красноярск)</span><span class="sc">2:0</span></li>
+      <li><small>За 1–4 место</small><span>СШ №17 — «Динамо» (Барнаул)</span><span class="sc">0:2</span></li>
+      <li><small>Финал</small><span>СШ №17 — «Форвард» (Красноярск)</span><span class="sc">2:1</span></li>
+    </ul>
+    <h2>Индивидуальные награды</h2>
+    <p>Мирон Козлов — лучший игрок турнира. Владислав Анкудинов — лучший нападающий. Мейран Донат — лучший игрок команды.</p>
+    <p>Поздравляем футболистов и тренеров Максима Николаевича Родионова и Алексея Борисовича Егорова.</p>`,
+  215: () => `
+    <p>СШ №17 объявляет дополнительный набор в вечерние группы. Занятия проходят в футбольном манеже «Восход», ул. 5-й Армии, 15, стр. 1. По всем вопросам звоните напрямую тренерам.</p>
+    <ul class="fixtures">${GROUPS.map(g => `<li><small>${g.years} г.р.</small><span>${g.days}, ${g.time} · ${g.coach}</span><a class="num" href="tel:${g.phone.replace(/\D/g, '').replace(/^8/, '+7')}">${g.phone}</a></li>`).join('')}</ul>`
+};
+window.page = () => {
+  const id = +new URLSearchParams(location.search).get('id') || 220;
+  const n = NEWS.find(x => x.id === id) || NEWS[1];
+  document.title = `${n.title} — СШ №17 Томск`;
+  $('#crumb').textContent = n.tag;
+  $('#meta').innerHTML = `<b>${n.tag}</b><span>${fmtDateY(n.date)}</span>${n.team !== 'all' ? `<span>${teamLabel(n.team)}</span>` : ''}`;
+  $('#title').textContent = n.title;
+  $('#lead').textContent = n.lead;
+  $('#cover').innerHTML = n.photo ? `<img src="${n.photo}" alt="">` : `<span class="crop" style="inset:0"><img src="${n.img}" alt="" style="position:absolute;width:117.8%;max-width:none;height:auto;left:-8.7%;top:-10%"></span>`;
+  $('#body').innerHTML = BODY[n.id] ? BODY[n.id](n) : `<p>${n.lead}</p>`;
+  const team = TEAMS.find(t => t.year === n.team || t.id === n.team);
+  const tm = MATCHES.filter(m => m.team === n.team).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+  $('#aside').innerHTML = (team ? `
+    <a class="tcard${team.photo ? '' : ' nophoto'}" href="team.html" style="aspect-ratio:4/3">
+      ${team.photo ? `<img class="bg" src="${team.photo}" alt="">` : `<img class="ghost keep" src="${LOGO}" alt="">`}
+      <div class="yr">${team.girls ? 'ЖФК' : team.year}<small>${team.girls ? 'Женская команда' : 'год рождения'}</small></div>
+      <div class="info"><small>Тренер-преподаватель</small><span>${team.coach}</span></div></a>` : '') +
+    (tm.length ? `<div class="panel" style="padding:20px;gap:12px"><div class="panel-head"><h3>Последние матчи</h3>${formStrip(tm)}</div>
+      ${tm.map(m => `<div style="display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:8px 0;border-top:1px solid var(--line)"><span>${fmtDate(m.date)} · ${m.opp}</span><b class="num">${m.us}:${m.them}</b></div>`).join('')}
+      <a class="link-arrow" href="matches.html" style="font-size:14px;margin-top:4px">Все матчи</a></div>` : '') +
+    `<div class="panel" style="padding:24px;background:var(--ink-900);color:var(--on-ink);border:0;gap:12px">
+      <b class="display h3">Хотите к нам</b><p style="margin:0;color:var(--on-ink-2);font-size:15px">Набор 2026/27 открыт для детей 7–10 лет</p>
+      <a class="btn btn-primary btn-sm" href="join.html#apply">Записаться на просмотр</a></div>`;
+  $('#more').innerHTML = NEWS.filter(x => x.id !== n.id).slice(0, 3).map(newsCard).join('');
+};
+</script>
+</body>
+</html>

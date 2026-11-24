@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Спортивная школа №17 Томск — футбол для детей с 7 лет</title>
+  <meta name="description" content="Муниципальная спортивная школа по футболу в Томске. Бесплатные занятия для детей от 7 лет в манеже «Восход», 18 команд, ЮФЛ Сибирь и Первенство России. Набор 2026/27 открыт.">
+  <meta name="theme-color" content="#111316">
+  <meta property="og:title" content="СШ №17 Томск — футбольная школа">
+  <meta property="og:description" content="Бесплатные занятия футболом для детей от 7 лет. Набор 2026/27 открыт.">
+  <meta property="og:image" content="https://sh17.ru/images/TeamsPhoto/2013%20%D0%A8%D0%BA%D0%BB%D1%8F%D1%80%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B5.jpg">
+  <link rel="icon" href="https://sh17.ru/images/logoSH.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;600&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":["SportsOrganization","EducationalOrganization"],"name":"Спортивная школа №17 города Томска","alternateName":"СШ №17","sport":"Футбол","foundingDate":"1993","url":"https://sh17.ru/","logo":"https://sh17.ru/images/logoSH.svg","telephone":"+7 3822 46-22-96","email":"st-vosxod@mail.ru","address":{"@type":"PostalAddress","streetAddress":"ул. 5-й Армии, 15, стр. 1","addressLocality":"Томск","postalCode":"634024","addressCountry":"RU"},"sameAs":["https://vk.com/ssh17tomsk"]}
+  </script>
+</head>
+<body data-page="home">
+<main id="main">
+
+  <!-- 1. Истории -->
+  <section class="hero" aria-label="Главные новости">
+    <div class="hero-slides" id="slides"></div>
+    <div class="hero-tabs"><div class="container" id="slideTabs"></div></div>
+  </section>
+
+  <!-- 2. Матч-центр -->
+  <section class="matchcenter on-ink" id="matches" aria-labelledby="mcTitle">
+    <div class="container">
+      <div class="mc-head">
+        <div class="left">
+          <h2 class="display h3" id="mcTitle">Матч-центр</h2>
+          <div class="chips" id="mcChips">
+            <button class="chip" data-v="all" aria-pressed="true">Все команды</button>
+            <button class="chip" data-v="2013" aria-pressed="false">2013</button>
+            <button class="chip" data-v="2011" aria-pressed="false">2011</button>
+            <button class="chip" data-v="2010" aria-pressed="false">2010</button>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:center">
+          <a class="link-arrow" href="matches.html">Все результаты</a>
+          <div class="rail-nav"><button data-rail="prev" aria-label="Назад"></button><button data-rail="next" aria-label="Вперёд"></button></div>
+        </div>
+      </div>
+      <div class="rail" id="mcRail"></div>
+    </div>
+  </section>
+
+  <!-- 3. Запись -->
+  <section class="section" id="join" style="padding-top:64px" aria-labelledby="joinTitle">
+    <div class="container">
+      <div class="join reveal">
+        <div class="join-copy">
+          <span class="kicker">Набор 2026/27 открыт</span>
+          <h2 class="display h2" id="joinTitle">Первая тренировка — в манеже «Восход»</h2>
+          <p class="lead">На 2026/27 учебный год открыто 200 мест для детей 7–10 лет. Для малышей и ребят постарше работают вечерние группы. Выберите год рождения — покажем группу, дни занятий и телефон тренера.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="join.html#apply">Записаться на просмотр</a>
+            <a class="btn btn-line" href="join.html#docs">Документы для поступления</a>
+          </div>
+          <div class="facts">
+            <div><b class="num">200</b><small>мест для детей 7–10 лет</small></div>
+            <div><b class="num">5</b><small>вечерних групп по годам рождения</small></div>
+            <div><b class="num">2×</b><small>в неделю, начало в 19:30</small></div>
+          </div>
+        </div>
+        <div class="picker on-ink">
+          <h3 class="display h3">Подберите группу</h3>
+          <div class="years" id="years" role="group" aria-label="Год рождения ребёнка"></div>
+          <div class="group-card" id="groupCard" aria-live="polite"></div>
+          <p style="margin:0;font-size:14px;color:var(--on-ink-3)">Нет нужного года? Позвоните в приёмную комиссию: <a href="tel:+73822462296" class="num" style="color:var(--on-ink)">(3822) 46-22-96</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Цифры -->
+  <section class="section-sm" aria-label="Школа в цифрах" style="padding-top:0">
+    <div class="container">
+      <div class="numbers reveal">
+        <div><b class="num">1993</b><span>год основания школы</span></div>
+        <div><b class="num">18</b><span>команд — от 2018 года рождения до выпускников и женской команды</span></div>
+        <div><b class="num">1<sup>место</sup></b><span>Первенство Сибирского и Дальневосточного округов 2026, команда 2013 г.р.</span></div>
+        <div><b class="num">2<sup>место</sup></b><span>Юношеская футбольная лига «Сибирь» U-15, сезон 2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Новости -->
+  <section class="section" style="padding-top:48px" aria-labelledby="newsTitle">
+    <div class="container">
+      <div class="section-head">
+        <div class="titles">
+          <span class="kicker">Жизнь школы</span>
+          <h2 class="display h2" id="newsTitle">Новости</h2>
+        </div>
+        <a class="link-arrow" href="news.html">Все новости</a>
+      </div>
+      <div class="chips scroll" id="newsChips" style="margin-bottom:32px">
+        <button class="chip" data-v="all" aria-pressed="true">Все</button>
+        <button class="chip" data-v="2013" aria-pressed="false">2013</button>
+        <button class="chip" data-v="2015" aria-pressed="false">2015</button>
+        <button class="chip" data-v="2016" aria-pressed="false">2016</button>
+        <button class="chip" data-v="2011" aria-pressed="false">2011</button>
+        <button class="chip" data-v="2018" aria-pressed="false">2018</button>
+        <button class="chip" data-v="zhfk" aria-pressed="false">Женский футбол</button>
+      </div>
+      <div class="news-grid" id="newsGrid"></div>
+    </div>
+  </section>
+
+  <!-- 6. Команды -->
+  <section class="section ink on-ink" aria-labelledby="teamsTitle">
+    <div class="container">
+      <div class="section-head">
+        <div class="titles">
+          <span class="kicker">18 команд · 16 тренеров-преподавателей</span>
+          <h2 class="display h2" id="teamsTitle">Команды школы</h2>
+        </div>
+        <a class="link-arrow" href="teams.html">Все команды</a>
+      </div>
+      <div class="team-grid" id="teamGrid"></div>
+
+      <div style="margin-top:96px">
+        <div class="section-head">
+          <div class="titles">
+            <span class="kicker">Путь футболиста</span>
+            <h2 class="display h3">От первой тренировки до ЮФЛ</h2>
+          </div>
+          <p class="lead" style="max-width:28rem">Каждый этап — своя программа, нормативы для перевода и уровень соревнований</p>
+        </div>
+        <div class="pathway" id="pathway"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Сообщество -->
+  <section class="section" aria-labelledby="commTitle">
+    <div class="container">
+      <div class="section-head">
+        <div class="titles">
+          <span class="kicker">Ноябрь 2026</span>
+          <h2 class="display h2" id="commTitle">Герои месяца</h2>
+        </div>
+      </div>
+      <div class="community">
+        <div class="panel reveal">
+          <div class="panel-head"><h3>Команда месяца</h3><a class="link-arrow" href="team.html" style="font-size:14px">Страница команды</a></div>
+          <div class="month-team">
+            <div class="big">2013</div>
+            <div style="display:grid;gap:4px;padding-bottom:6px">
+              <b style="font-size:18px">Финал Первенства России U-14</b>
+              <span class="muted" style="font-size:14px">Тренер — Шкляр Евгений Андреевич</span>
+            </div>
+          </div>
+          <div class="wdl">
+            <div><b class="num">0</b><small>побед</small></div>
+            <div><b class="num">2</b><small>ничьи</small></div>
+            <div><b class="num">2</b><small>поражения</small></div>
+          </div>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-head"><h3>Игрок месяца</h3></div>
+          <div class="player-month">
+            <div class="avatar"><span>РП</span></div>
+            <div>
+              <h4>Роман Пеплау</h4>
+              <span class="muted" style="font-size:14px">Полузащитник · 2013 г.р.</span>
+              <div class="kv">
+                <div><b class="num">1</b><small>гол</small></div>
+                <div><b class="num">32</b><small>матча за сезон</small></div>
+              </div>
+            </div>
+          </div>
+          <p class="muted" style="margin:0;font-size:14px">Открыл счёт в матче с «Ижорцем» на 7-й минуте</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-head"><h3>Дни рождения</h3><span class="muted" style="font-size:13px">на этой неделе</span></div>
+          <ul class="bday" id="bday"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Где мы -->
+  <section class="section" style="padding-top:0" aria-labelledby="venueTitle">
+    <div class="container">
+      <div class="venue reveal">
+        <div class="venue-info">
+          <div style="display:grid;gap:16px">
+            <span class="kicker">Где мы тренируемся</span>
+            <h2 class="display h2" id="venueTitle">Манеж «Восход»</h2>
+          </div>
+          <ul class="contact-list">
+          </ul>
+          <form class="form-grid" data-demo>
+            <b style="font-size:17px">Напишите нам</b>
+            <div class="field"><label for="fn">Имя</label><input class="input" id="fn" required autocomplete="name"></div>
+            <div class="field"><label for="fm">Телефон или e-mail</label><input class="input" id="fm" required></div>
+            <div class="field"><label for="fq">Вопрос</label><textarea class="textarea" id="fq" required></textarea></div>
+            <label class="check"><input type="checkbox" required><span>Даю согласие на обработку персональных данных для ответа на обращение и ознакомлен(а) с <a href="school.html#privacy-policy">политикой</a></span></label>
+            <button class="btn btn-dark" type="submit">Отправить</button>
+            <div class="form-ok">Спасибо, сообщение отправлено. Ответим в рабочее время</div>
+          </form>
+        </div>
+        <div class="map">
+          <iframe title="Карта: манеж «Восход»" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=84.9337%2C56.5199%2C84.9537%2C56.5279&amp;layer=mapnik&amp;marker=56.52395%2C84.94369"></iframe>
+          <a class="btn btn-light btn-sm map-link" href="https://yandex.ru/maps/?pt=84.94369,56.52395&amp;z=16&amp;l=map" target="_blank" rel="noopener">Маршрут в Яндекс Картах</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+window.page = () => {
+  /* --- Истории --- */
+  const slides = [
+    { n: NEWS.find(n => n.id === 220), img: NEWS.find(n => n.id === 220).photo, kicker: 'Первенство России U-14', title: 'Сильнейшие в Сибири — в финале России', text: 'Команда 2013 г.р. выиграла первенство СФО и ДФО и сыграла в Сочи с «Коломягами», «Ижорцем», «Краснодаром» и ЦСКА', cta: 'Читать', href: 'article.html?id=220', alt: 'Результаты', alt2: 'team.html' },
+    { n: NEWS.find(n => n.id === 216), img: NEWS.find(n => n.id === 216).photo, kicker: 'Кубок Спартака · Новокузнецк', title: 'Два кубка у команд 2016 года', text: '«Белые» выиграли лигу А, «синие» — лигу Б. Лучшие игроки лиг — Евгений Чернов и Марк Шмаленюк', cta: 'Читать', href: 'article.html?id=216' },
+    { n: NEWS.find(n => n.id === 215), img: NEWS.find(n => n.id === 215).photo, kicker: 'Набор', title: 'Вечерние группы для детей 2011–2022 г.р.', text: 'Занятия два раза в неделю в 19:30 в манеже «Восход». Выберите год рождения — покажем тренера и расписание', cta: 'Подобрать группу', href: '#join' },
+    { n: NEWS.find(n => n.id === 214), img: NEWS.find(n => n.id === 214).photo, kicker: 'Женский футбол', title: 'Серебро чемпионата Томской области', text: 'Две женские команды СШ №17 — среди призёров чемпионата области', cta: 'Читать', href: 'article.html?id=214' }
+  ];
+  const DUR = 7000;
+  $('#slides').innerHTML = slides.map((s, i) => `
+    <article class="hero-slide${i ? '' : ' active'}" aria-hidden="${i ? 'true' : 'false'}">
+      <img class="keep" src="${s.img}" alt="" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>
+    </article>`).join('') + `
+    <div class="hero-copy"><div class="container"><div class="inner" id="heroCopy"></div></div></div>`;
+  $('#slideTabs').innerHTML = slides.map((s, i) => `
+    <button class="hero-tab${i ? '' : ' active'}" style="--dur:${DUR}ms" data-i="${i}">
+      <span class="bar"><i></i></span><small>${s.kicker}</small><span>${s.title}</span>
+    </button>`).join('');
+  let cur = 0, timer;
+  const show = i => {
+    cur = i;
+    $$('.hero-slide').forEach((el, j) => { el.classList.toggle('active', j === i); el.setAttribute('aria-hidden', j !== i); });
+    $$('.hero-tab').forEach((el, j) => { el.classList.remove('active'); void el.offsetWidth; el.classList.toggle('active', j === i); });
+    const s = slides[i];
+    $('#heroCopy').innerHTML = `
+      <div class="hero-meta"><span class="tag">${s.kicker}</span><span>${fmtDate(s.n.date)}</span></div>
+      <h1 class="display h1">${s.title}</h1>
+      <p>${s.text}</p>
+      <div class="actions"><a class="btn btn-light" href="${s.href}">${s.cta} ${ico('arrow', 'i-16')}</a>${i === 0 ? `<a class="btn btn-line-ink" href="team.html">Команда 2013</a>` : ''}</div>`;
+    clearTimeout(timer); timer = setTimeout(() => show((cur + 1) % slides.length), DUR);
+  };
+  $$('.hero-tab').forEach(b => b.addEventListener('click', () => show(+b.dataset.i)));
+  show(0);
+
+  /* --- Матч-центр --- */
+  const mcRoot = $('#matches');
+  $$('[data-rail]', mcRoot).forEach(b => b.innerHTML = ico(b.dataset.rail === 'next' ? 'right' : 'left'));
+  $('.link-arrow', mcRoot).innerHTML = 'Все результаты ' + ico('arrow', 'i-16');
+  const t13 = MATCHES.filter(m => m.team === '2013');
+  const summary = `<div class="mc-summary">
+    <div style="display:grid;gap:10px"><span style="font-size:13px;opacity:.85">Сезон 2026 · команда 2013 г.р.</span>
+    <h3 class="display h3">Чемпионы СФО и ДФО, финалисты Первенства России</h3></div>
+    <div class="row"><div><b class="num">43</b><small>матча</small></div><div><b class="num">31</b><small>победа</small></div><div><b class="num">160</b><small>мячей забито</small></div></div>
+  </div>`;
+  const drawMc = v => {
+    const list = MATCHES.filter(m => v === 'all' || m.team === v).sort((a, b) => b.date.localeCompare(a.date) || b.id - a.id).slice(0, 10);
+    $('#mcRail').innerHTML = (v === 'all' || v === '2013' ? summary : '') + list.map(matchCard).join('');
+    $('#mcRail').scrollLeft = 0;
+  };
+  drawMc('all'); initChips($('#mcChips'), drawMc); initRail(mcRoot);
+
+  /* --- Подбор группы --- */
+  $('#years').innerHTML = GROUPS.map((g, i) => `<button type="button" aria-pressed="${i === 0}" data-i="${i}">${g.years.replace('–', '–<br>')}</button>`).join('');
+  const now = 2026;
+  const drawGroup = i => {
+    const g = GROUPS[i];
+    const ys = g.years.split('–').map(Number);
+    const ages = ys.length > 1 ? `${now - ys[1]}–${now - ys[0]} лет` : `${now - ys[0]} лет`;
+    $('#groupCard').innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px">
+        <div class="big">${g.years}</div><span style="color:var(--on-ink-3);font-size:14px;padding-bottom:6px">${ages}</span>
+      </div>
+      <dl>
+        <dt>Дни</dt><dd>${g.days}, ${g.time}</dd>
+        <dt>Тренер</dt><dd>${g.coach}</dd>
+        <dt>Место</dt><dd>Манеж «Восход», ул. 5-й Армии, 15</dd>
+      </dl>
+      <div class="row"><a class="btn btn-light btn-sm" href="tel:${g.phone.replace(/\D/g, '').replace(/^8/, '+7')}">${ico('phone', 'i-16')} <span class="num">${g.phone}</span></a><a class="btn btn-line-ink btn-sm" href="join.html#apply">Оставить заявку</a></div>`;
+  };
+  drawGroup(0);
+  $$('#years button').forEach(b => b.addEventListener('click', () => {
+    $$('#years button').forEach(x => x.setAttribute('aria-pressed', x === b)); drawGroup(+b.dataset.i);
+  }));
+
+  /* --- Новости --- */
+  const drawNews = v => {
+    const list = NEWS.filter(n => v === 'all' || n.team === v).slice(0, 5);
+    $('#newsGrid').innerHTML = list.length ? list.map(newsCard).join('') : '<p class="muted">Новостей этой команды пока нет</p>';
+  };
+  drawNews('all'); initChips($('#newsChips'), drawNews);
+
+  /* --- Команды --- */
+  const featured = ['2013', '2011-1', '2015', '2016-1', '2010-1', '2018', 'zhfk', '2008'].map(id => TEAMS.find(t => t.id === id));
+  $('#teamGrid').innerHTML = featured.map(teamCard).join('');
+  $('#pathway').innerHTML = Object.entries(STAGES).map(([k, s], i) => `
+    <div class="step${i === 0 ? ' on' : ''} reveal"><span class="dot">${i + 1}</span><span class="age">${s.age}</span><h4>${s.name}</h4><p>${s.text}</p></div>`).join('');
+
+  /* --- Дни рождения --- */
+  $('#bday').innerHTML = BIRTHDAYS.slice(0, 5).map((b, i) => `<li class="${i === 0 ? 'today' : ''}"><b>${b.name}</b><span class="age num">${b.age}</span><small>${b.date}</small></li>`).join('');
+
+  /* --- Контакты --- */
+  $('.contact-list').innerHTML = `
+    <li>${ico('pin')}<div>${SCHOOL.address}<small>Футбольный манеж «Восход»</small></div></li>
+    <li>${ico('phone')}<div><a href="tel:${SCHOOL.phoneHref}" class="num">${SCHOOL.phone}</a><small>Приёмная комиссия: ${SCHOOL.admissionHours}</small></div></li>
+    <li>${ico('mail')}<div><a href="mailto:${SCHOOL.email}">${SCHOOL.email}</a></div></li>
+    <li>${ico('clock')}<div>${SCHOOL.hours}</div></li>`;
+};
+</script>
+</body>
+</html>
